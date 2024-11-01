@@ -194,9 +194,9 @@ const Contact: React.FC = () => {
                   ) : null}
                 </InputGroup>
                 <div className="mt-4 Contact-btn text-center">
-                  <Button className="rounded-5" type="submit">
+                  <Button className="rounded-5" variant="transparent" type="submit">
                     {formStatus === true ? (
-                      <span style={{ backgroundColor: "transparent" }}>
+                      <span>
                         send
                       </span>
                     ) : (

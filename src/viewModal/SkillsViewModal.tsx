@@ -75,7 +75,7 @@ export const SkillsViewModal = (): TechnologyCategory[] => {
                     imgAlt: 'postgreSqlIcon',
                 },
                 {
-                    skill: 'SqlLite',
+                    skill: 'SqLite',
                     image: icons.sqlite,
                     imgAlt: 'postgreSqlIcon',
                 },

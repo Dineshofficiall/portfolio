@@ -1,4 +1,4 @@
-import projectCardImg from '/Project/PortfolioFrontend/Portfolio/src/assets/projects/projectInfo.png'
+import projectCardImg from '../icons/projects/projectInfo.png'
 
 export const ProjectImage = () => {
     return {

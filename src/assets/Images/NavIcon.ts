@@ -1,4 +1,4 @@
-import seoLogo from '/Project/PortfolioFrontend/Portfolio/src/assets/logo/seo.png';
+import seoLogo from '../icons/logo/seo.png';
 export const NavIcon = () => {
     return {
         seoLogo,

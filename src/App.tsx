@@ -8,7 +8,7 @@ import WebProject from "./view/screen/projects/WebProject";
 import AndroidProject from "./view/screen/projects/AndroidProject";
 import React from "react";
 import './App.css'
-// import Footer from "./pages/footer/Footer"
+import Footer from "./view/screen/footer/Footer";
 
 const App: React.FC = () => {
   return (
@@ -25,7 +25,7 @@ const App: React.FC = () => {
           <Route path="*" element={<Error />} />
         </Routes>
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };

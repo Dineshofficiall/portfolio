@@ -9,7 +9,7 @@ const About:React.FC = () => {
     const [resumeStates, setResumeStatus] = useState<string>("Check Resume");
     const resumeRedirection = () => {
         setResumeStatus("Redirecting . . . .")
-        window.location.href = "https://drive.google.com/file/d/1_uNcfz0v329WQElHAJ4AyZXvYw1R1kJd/view?usp=drive_link";
+        window.location.href = "https://drive.google.com/file/d/1nr0mzAaPMw8kqnhOoWrINqqQ6X3qvOMp/view?usp=drive_link";
     }
     return (
         <>

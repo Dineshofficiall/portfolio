@@ -1,4 +1,4 @@
-import Profile from '/Project/PortfolioFrontend/Portfolio/src/assets/Profile/profile.jpg'
+import Profile from '../icons/Profile/profile.jpg'
 export const ProfileIcon = () => {
     return{
         Profile,

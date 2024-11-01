@@ -59,6 +59,9 @@
     font-size: 15px;
     background-color: transparent;
 }
+.Contact-btn span {
+    background: transparent !important;
+}
 @keyframes contactBorderColorAnimation {
     0% {
         border-color: #7102c6;
