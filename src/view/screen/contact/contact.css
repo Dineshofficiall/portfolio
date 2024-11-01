@@ -1,0 +1,84 @@
+.Contact-Input-Groups {
+    background-color: #191724 !important;
+    border: 1px solid #7806f1 !important;
+    border-radius: 17%  !important;
+    position: relative;
+}
+.parent-contact-block span {
+    position: absolute;
+    z-index: 1;
+    right: 13px;
+    top: 5px;
+    background-color: transparent;
+}
+
+.Contact-Input-Groups:focus {
+    box-shadow: none !important;
+    outline: none !important;
+    background-color: #191724 !important;
+}
+.Contact-Input-Groups::placeholder{
+    color: #da9ae1 !important;
+}
+/* Ensure background color remains consistent on focus */
+.Contact-Input-Groups {
+    background-color: #191724 !important;
+}
+/* Handle autofill background color */
+.Contact-Input-Groups:-webkit-autofill,
+.Contact-Input-Groups:-webkit-autofill:hover,
+.Contact-Input-Groups:-webkit-autofill:focus,
+.Contact-Input-Groups:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0px 1000px #191724 inset !important;
+    -webkit-background-color: #191724 !important;
+    box-shadow: 0 0 0px 1000px #191724 inset !important;
+    -webkit-text-fill-color: #ffffff !important; /* Optional: Set the text color */
+}
+
+.contact-block{
+    border-radius: 20px;
+    border: 1px solid rgb(72, 8, 133) !important;
+    box-shadow: 0px 0px 10px 3px rgb(55, 28, 87);
+}
+
+/* btn */
+.Contact-btn button{
+    padding: 3.5px 6em;
+    background: linear-gradient(to right, #7705f0 40%, #6513a4 46%, #3c0a3c 0%);
+    background-size: 300% 100%;
+    background-position: 100% 0;
+    color: rgb(225, 255, 0) !important;
+    border: 3px solid #d105f0;
+    transition: background-position 1.2s ease-in-out;
+    animation: contactBorderColorAnimation 3s ease-in-out infinite;
+}
+.Contact-btn button:hover {
+    background-position: 0 0;
+}
+.Contact-btn .spinner {
+    font-size: 15px;
+    background-color: transparent;
+}
+@keyframes contactBorderColorAnimation {
+    0% {
+        border-color: #7102c6;
+    }
+    16% {
+        border-color: #430180;
+    }
+    33% {
+        border-color: #46016b;
+    }
+    49% {
+        border-color: #270248;
+    }
+    66% {
+        border-color: #46016b;
+    }
+    82% {
+        border-color: #430180;
+    }
+    100% {
+        border-color: #7102c6;
+    }
+}

@@ -1,0 +1,62 @@
+.name h1{
+    font-weight: 700;
+    font-size: 2.8rem;
+}
+.domain {
+    font-weight: 600;
+    font-size: 2.0rem;
+}
+.passage-block {
+    border-color: rgb(84, 11, 151) !important;
+    box-shadow: 0px 0px 3px 1px rgb(55, 28, 87);
+    background: black;
+    border-radius: 50px;
+}
+.header-passage {
+    line-height: 2.1;
+    font-size: 1.05rem;
+    word-spacing: 1px;
+    font-weight: 500;
+    text-align: justify;
+    text-indent: 6em;
+}
+.Resume-sec button {
+    padding: 8px 29px;
+    background: linear-gradient(to right, #d105f0 40%, #9113a4 46%, #3c0a3c 0%);
+    background-size: 300% 100%;
+    background-position: 100% 0;
+    color: rgb(225, 255, 0) !important;
+    border: 3px solid #d105f0;
+    transition: background-position 1.2s ease-in-out;
+    animation: borderColorAnimation 3s ease-in-out infinite;
+}
+
+.Resume-sec button:hover {
+    background-position: 0 0;
+}
+@keyframes borderColorAnimation {
+    0% {
+        border-color: #dd02ff;
+    }
+    16% {
+        border-color: #a507bd;
+    }
+    33% {
+        border-color: #600670;
+    }
+    49% {
+        border-color: #480248;
+    }
+    66% {
+        border-color: #600670;
+    }
+    82% {
+        border-color: #a507bd;
+    }
+    100% {
+        border-color: #dd02ff;
+    }
+}
+
+
+/**/

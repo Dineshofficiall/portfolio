@@ -1,0 +1,39 @@
+.skillSet-parent {
+    border-radius: 20px;
+    border: 1.5px solid rgb(72, 8, 133) !important;
+    box-shadow: 0px 0px 10px 3px rgb(55, 28, 87);
+    width: 290px !important;
+}
+.skillSet-parent, .skillSet-parent div, .skillSet-parent h4{
+    background-color: rgba(19, 17, 17, 0.548) !important;
+}
+.skillSet {
+    height: 17em;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: space-evenly;
+}
+.icons-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #831494;
+    border-radius: 20px;
+    padding: 4px 13px;
+    margin: 0 5px;
+}
+.icons-container img{
+    background-color: transparent;
+}
+.icons-container li{
+    background-color: transparent;
+    list-style: none;
+    margin-left: 3px;
+}
+
+/* @media screen and (min-width: 575px) {
+    .skillSet-parent {
+        width: 288px !important;
+    }
+} */

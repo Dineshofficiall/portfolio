@@ -1,0 +1,60 @@
+/* redirection link */
+.navigation {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 2px solid rgb(72, 7, 253);
+    border-radius: 20px;
+}
+.navigation li{
+    list-style-type: none;
+    padding: 5px;
+    cursor: pointer;
+}
+/* ends */
+
+/* color for entire block */
+.project-card, .project-card p, .project-card em{
+    background-color: rgba(19, 17, 17, 0.548) !important;
+}
+/* ends */
+
+/* header-content - techContent */
+.project-card .header-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 2px 7px;
+}
+.project-card .header-content li {
+    background-color: rgba(19, 17, 17, 0.548) !important;
+    list-style: none;
+    margin: 3px 5px;
+    padding: 2px 5px;
+    font-size: 10.5px;
+    background-color: #2f194b !important;
+    border: 1px solid rgb(72, 7, 253);
+    border-radius: 20px;
+}
+/* ends */
+
+/* duration of the project */
+.project-card .date-range{
+    margin-top: 2px;
+    margin-bottom: 10px !important;
+    font-size: 9px;
+}
+/* ends */
+
+/* card-body */
+.project-description {
+    font-size: 14px;
+    
+}
+/* ends */
+
+/* footer */
+.card-footer {
+    padding: 0px 8px !important;
+    font-size: 12px;
+}

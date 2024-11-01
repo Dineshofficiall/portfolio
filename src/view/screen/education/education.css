@@ -1,0 +1,43 @@
+.contents {
+    padding: 0px 23px;
+    border-left: 2px solid rgb(77, 4, 137);
+}
+.contents .box {
+    position: relative;
+    border-color: rgb(72, 8, 133) !important;
+    box-shadow: 0px 0px 3px 1px rgb(55, 28, 87);
+    cursor: pointer;
+    transition: all 0.4s;
+}
+.contents .box::before {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    right: calc(100% + 26px);
+    top: 0;
+    background-color: #dd02ff;
+    border: 3px solid rgb(70, 3, 255);
+    border-radius: 38% 62% 67% 33% / 21% 37% 63% 79% ;
+}
+.educationPassage {
+    text-align: justify;
+    text-indent: 6rem;
+}
+
+@media screen and (max-width: 576px) {
+    .contents {
+        padding: 0;
+        border: none;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .contents .box::before {
+        display: none;
+    }
+    .content-inner-block {
+        width: 470px !important;
+        padding: 0 !important;
+    }
+}

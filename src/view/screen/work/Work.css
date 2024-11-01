@@ -1,0 +1,9 @@
+.list-block {
+    margin: 15px 0;
+    padding: 0 20px;
+}
+@media screen and (max-width: 576px) {
+    .list-block {
+        padding: 0;
+    }
+}
