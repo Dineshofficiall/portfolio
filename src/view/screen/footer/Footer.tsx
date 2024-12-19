@@ -18,8 +18,8 @@ const Footer: React.FC = () => {
   return (
     <Container fluid className="my-1 py-4">
       <Row sm={1} md={1} lg={2} className="footer-component">
-        <h5>Dinesh Kumar</h5>
-        <Col lg={5} className="links">
+        <h5 className="text-center mb-3">Dinesh Kumar</h5>
+        <Col className="col-md-8 my-4 my-lg-3 links">
           <ScrollLink
             activeClass="active"
             className="nav-link"
@@ -81,13 +81,19 @@ const Footer: React.FC = () => {
             Educational
           </ScrollLink>
         </Col>
-        <Col lg={3} className="links">
-          <FaXTwitter />
-          <IoLogoLinkedin />
-          <IoLogoGithub />
+        <Col className=" col-12 d-flex justify-content-center my-md-4 ">
+          <Col className="col-6 d-flex justify-content-evenly align-items-center">
+            <FaXTwitter />
+            <IoLogoLinkedin />
+            <IoLogoGithub />
+          </Col>
+        </Col>
+        <Col className="col-12 mt-4 mt-sm-4 mt-md-0 ">
+          <p style={{ fontSize: "0.8em", textAlign: 'center' }}>
+            &copy; 2024 Dinesh Kumar. All rights reserved.
+          </p>
         </Col>
       </Row>
-      <p style={{fontSize: '0.8em', textAlign: 'center'}}>&copy; 2024 Dinesh Kumar. All rights reserved.</p>
     </Container>
   );
 };

@@ -10,7 +10,7 @@ const About: React.FC = () => {
   const resumeRedirection = () => {
     setResumeStatus("Redirecting . . . .");
     window.location.href =
-      "https://drive.google.com/file/d/1nr0mzAaPMw8kqnhOoWrINqqQ6X3qvOMp/view?usp=drive_link";
+      "https://drive.google.com/file/d/1nr0mzAaPMw8kqnhOoWrINqqQ6X3qvOMp/view?usp=sharing";
   };
   return (
     <>
@@ -26,7 +26,7 @@ const About: React.FC = () => {
               <div className="py-3 py-md-0 my-lg-2">
                 <p className="header-passage">
                   I am an enthusiastic developer holding a BSc in Computer
-                  Science, complemented by three months of experience in React
+                  Science, complemented by four months of experience in React
                   Native frontend development, with a focus on crafting
                   responsive mobile applications. Driven by a desire to enhance
                   my skill set, I am committed to contributing to innovative
@@ -46,8 +46,9 @@ const About: React.FC = () => {
               <Image
                 src={icon.Profile}
                 alt=""
+                className="profileImg"
                 style={{
-                  width: "87%",
+                  // width: "100%",
                   height: "320px",
                   objectFit: "cover",
                   borderRadius: "56%",

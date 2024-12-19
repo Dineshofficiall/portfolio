@@ -124,7 +124,7 @@ const Contact: React.FC = () => {
   return (
     <>
       <section>
-        <Container className="col-12 col-sm-9 col-lg-6 px-3 px-sm-0 p-1 my-5">
+        <Container className="col-12 col-sm-9 col-lg-6 col-xxl-5 px-3 px-sm-0 p-1 my-5">
           <div className="text-center mb-5">
             <h1>Contact</h1>
             <p>
@@ -204,8 +204,8 @@ const Contact: React.FC = () => {
                         <Spinner
                           animation="border"
                           variant="info"
-                          className="spinner"
-                          style={{ width: "1.2rem", height: "1.2rem" }}
+                          className="spinner bg-transparent"
+                          style={{ width: "1.2rem", height: "1.2rem"}}
                         />
                       </span>
                     )}

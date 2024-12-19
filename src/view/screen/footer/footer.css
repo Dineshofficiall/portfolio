@@ -1,12 +1,10 @@
 .footer-component {
-    height: 35vh;
     display: flex;
-    flex-direction: column;
+    flex-direction: column !important;
     align-items: center;
     justify-content: space-evenly;
 }
 .links {
-    padding: 23px 0;
     display: flex;
     justify-content: space-evenly;
     align-items: center;

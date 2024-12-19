@@ -38,7 +38,7 @@ const Work: React.FC = () => {
               <ul>
                 <li className="list-block">
                   In my role as a React Native frontend developer at Hema
-                  Enterprise Pvt Ltd for the past 2 months, I have gained
+                  Enterprise Pvt Ltd for the past 4 months, I have gained
                   profound insights into system architecture, particularly the
                   MVVM (Model-View-ViewModel) design pattern.
                 </li>

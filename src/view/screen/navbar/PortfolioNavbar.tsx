@@ -7,7 +7,13 @@ import { NavIcon } from "../../../assets/Images/NavIcon";
 const PortfolioNavbar: React.FC = () => {
   const icon = NavIcon();
 
-  const [gitHubStatus, setGithubStates] = useState("GitHub Profile");
+  const [gitHubStatus, setGithubStates] = useState<string>("GitHub Profile");
+  const [isNavBtnClicked, setIsNavBtnClicked] = useState<boolean>(false);
+
+  const handleToggleMenu = () => {
+    setIsNavBtnClicked((prev) => !prev);
+  };
+
   const githubRedirection = () => {
     setGithubStates("Redirecting . . . .");
     window.location.href = "https://github.com/Dineshofficiall";
@@ -25,7 +31,27 @@ const PortfolioNavbar: React.FC = () => {
             <Navbar.Brand>Portfolio</Navbar.Brand>
           </Col>
 
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Toggle
+            onClick={handleToggleMenu}
+            style={{
+              outline: "none",
+              boxShadow: "none",
+              padding: 0,
+              backgroundColor: "transparent",
+            }}
+            aria-controls="responsive-navbar-nav"
+            aria-label="Toggle navigation menu"
+          >
+            <Image
+              src={isNavBtnClicked ? icon.close : icon.menu}
+              alt={isNavBtnClicked ? "Close menu" : "Open menu"}
+              style={{
+                height: "40px",
+                width: "60px",
+                objectFit: "contain",
+              }}
+            />
+          </Navbar.Toggle>
 
           <Navbar.Collapse className="py-4 py-lg-0 " id="responsive-navbar-nav">
             <Nav className="col-lg-8 mb-4 mb-lg-0 d-flex justify-content-evenly align-items-center me-auto">
