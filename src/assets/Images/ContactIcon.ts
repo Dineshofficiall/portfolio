@@ -1,6 +1,6 @@
-import rocketIcon from "../icons/contact icon/rocket.png"
+import rocketIcon from "../icons/contact icon/rocket.png";
 export const ContactIcon = () => {
-    return {
-        rocketIcon,
-    }
-}
+  return {
+    rocketIcon,
+  };
+};

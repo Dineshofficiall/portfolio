@@ -1,6 +1,6 @@
-import Profile from '../icons/Profile/profile.jpg'
+import Profile from "../icons/Profile/profile.jpg";
 export const ProfileIcon = () => {
-    return{
-        Profile,
-    }
-}
+  return {
+    Profile,
+  };
+};
