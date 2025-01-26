@@ -26,7 +26,7 @@ const About: React.FC = () => {
               <div className="py-3 py-md-0 my-lg-2">
                 <p className="header-passage">
                   I am an enthusiastic developer with a BSc in Computer Science,
-                  bringing six months of experience in both React.js and React
+                  bringing six months of experience in both React Js and React
                   Native frontend development. I specialize in creating
                   responsive mobile and web applications. Passionate about
                   continuous learning, I am eager to contribute to innovative

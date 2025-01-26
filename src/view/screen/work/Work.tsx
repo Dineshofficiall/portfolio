@@ -53,9 +53,7 @@ const Work: React.FC = () => {
                           <li
                             className="list-block"
                             style={{
-                              fontSize: "0.8rem",
-                              lineHeight: "1.1rem",
-                              letterSpacing: 0.5,
+                              fontSize: "0.9rem",
                             }}
                             key={decriptionIndex}
                           >

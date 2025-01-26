@@ -4,6 +4,7 @@ import { Container } from "react-bootstrap";
 
 // css
 import "./project.css";
+import { Link, Outlet } from "react-router-dom";
 // import { Link, Outlet } from "react-router-dom";
 
 const Projects: React.FC = () => {
@@ -13,20 +14,20 @@ const Projects: React.FC = () => {
         <Container className="col-12 col-md-9 col-lg-8">
           <div className="d-flex flex-column align-items-center justify-content-center mb-5">
             <h1>Projects</h1>
-            {/* <article className="col-10 col-sm-8 text-center py-3">
+            <article className="col-10 col-sm-8 text-center py-3">
               I have worked on a wide range of projects. From web apps to
               android apps. Here are some of my projects.
-            </article> */}
+            </article>
           </div>
           <div className="d-flex justify-content-center align-items-center">
             <div className="col-11 col-md-7 col-lg-5">
-              <p className="bg-danger text-center rounded-pill p-3">
+              {/* <p className="bg-danger text-center rounded-pill p-3">
                 "Project in progress – visuals coming soon. Stay tuned for
                 updates!"
-              </p>
-              {/* <ul className="navigation">
+              </p> */}
+              <ul className="navigation">
                 <li>
-                  <Link to="">App</Link>
+                  <Link to="">All Project</Link>
                 </li>
 
                 <li>|</li>
@@ -40,10 +41,10 @@ const Projects: React.FC = () => {
                 <li>
                   <Link to="androidProject">Android</Link>
                 </li>
-              </ul> */}
+              </ul>
             </div>
           </div>
-          {/* <Outlet /> */}
+          <Outlet />
         </Container>
       </section>
     </>
