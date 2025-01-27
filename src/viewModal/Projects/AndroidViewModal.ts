@@ -7,6 +7,9 @@ interface Android {
   projectTimeLine: string;
   projectDescription: string;
   lastDateModified: string;
+  githubLink: string | null;
+  liveLink: string | null;
+  alertMessage: string | null;
 }
 interface AndroidProject {
   android: Android[];
@@ -15,7 +18,7 @@ export const AndroidViewModal = (): AndroidProject => {
   const img = ProjectImage();
   const android: Android[] = [
     {
-      projectId: 1,
+      projectId: 1000,
       images: [
         img.androidEventpic1,
         img.androidEventpic2,
@@ -34,6 +37,10 @@ export const AndroidViewModal = (): AndroidProject => {
       projectDescription:
         "Built an event management system with Firebase, implementing social authentication and NoSQL database interactions.",
       lastDateModified: "Dec 20, 2024",
+      githubLink: "https://github.com/Dineshofficiall/ReactnativeEventProject",
+      liveLink: null,
+      alertMessage:
+        "This is an Android project, and we will soon integrate it into the tech stack for virtual display through an online view.",
     },
   ];
   return {

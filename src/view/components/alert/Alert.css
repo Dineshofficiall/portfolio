@@ -1,0 +1,20 @@
+.custom-modal .modal-header {
+  padding: 3px 10px !important;
+  border-bottom: 0 !important;
+}
+.custom-modal .modal-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+.custom-modal .modal-content {
+  font-size: 0.9rem;
+  padding: 12px 10px !important;
+  box-shadow: 0.5px 0.5px 8px #dd02ff71 !important;
+  border-radius: 20px;
+}
+.custom-modal .modal-body,
+.modal-footer {
+  padding: 0px 10px !important;
+  margin: 5px 0px;
+  border: 0 !important;
+}   

@@ -6,18 +6,24 @@ interface Web {
   projectTimeLine: string;
   projectDescription: string;
   lastDateModified: string;
+  githubLink: string | null;
+  liveLink: string | null;
+  alertMessage: string | null;
 }
 interface WebProject {
   web: Web[];
   selectedProject: (filterId: number) => void;
+  validNavigate: (projectId: number) => void;
 }
 
 import { useNavigate } from "react-router-dom";
 // image
 import { ProjectImage } from "../../assets/Images/ProjectImage";
+import { AlertViewModal } from "../AlertViewModal";
 
 export const WebViewModal = (): WebProject => {
   const navigation = useNavigate();
+  const { show } = AlertViewModal();
   const img = ProjectImage();
   const web: Web[] = [
     {
@@ -37,6 +43,10 @@ export const WebViewModal = (): WebProject => {
       projectDescription:
         "Developed a static site using React.js, Material-UI, and Redux, following the MVC pattern for maintainable and scalable architecture. Inspired by DummyJSON, this project provides API responses for auth, project, and cart objects, enabling beginners to quickly build a frontend with a fast UI experience. Deployed the project using Vercel.",
       lastDateModified: "Jan 23, 2025",
+      githubLink: "https://github.com/Dineshofficiall/JIFFYjson",
+      liveLink: "https://jiff-yjson.vercel.app/",
+      alertMessage:
+        "The site is currently not integrated with the backend, so the content does not function in real-time. We are actively working to fix this as soon as possible.",
     },
     {
       projectId: 2,
@@ -61,6 +71,10 @@ export const WebViewModal = (): WebProject => {
       projectDescription:
         "Crafted user-friendly interfaces for product browsing, order placement, and customer management, utilizing ReactJS and Java (Spring Boot) to elevate user experience and streamline e-commerce operations. Integrated PostgreSQL for CRUD operations and ORM schema management in an e-commerce back end system.",
       lastDateModified: "Aug 18, 2024",
+      githubLink: "https://github.com/Dineshofficiall/basics-ecom-frontend",
+      liveLink: "https://basics-ecom-frontend.vercel.app/",
+      alertMessage:
+        "Due to backend issues, some images and functionalities are temporarily unavailable. We are working on resolving this soon.",
     },
     {
       projectId: 3,
@@ -83,6 +97,10 @@ export const WebViewModal = (): WebProject => {
       projectDescription:
         "Designed and Developed custom UI Web application to showcase product catalog and facilitate seamless user interaction. Developed The Chocolate Room, a custom web app with product catalogs, pricing checks, online ordering, and dining reservations. Leveraged Bootstrap for Responsiveness and JavaScript for interactive features.",
       lastDateModified: "Jan 1, 2024",
+      githubLink: "https://github.com/Dineshofficiall/TheChocolateRoom",
+      liveLink: "https://the-chocolate-room.vercel.app/",
+      alertMessage:
+        "The site is optimized with high-quality images and works best on a reliable network connection.",
     },
     {
       projectId: 4,
@@ -100,6 +118,9 @@ export const WebViewModal = (): WebProject => {
       projectDescription:
         "Built a responsive portfolio website using ReactJS and Bootstrap, featuring Smooth Scroll for enhanced navigation and EmailJS for user email submissions.",
       lastDateModified: "Jan 26, 2025",
+      githubLink: "https://github.com/Dineshofficiall/portfolio",
+      liveLink: "https://dineshofficiall.github.io/portfolio/",
+      alertMessage: null,
     },
     {
       projectId: 5,
@@ -121,6 +142,10 @@ export const WebViewModal = (): WebProject => {
       projectDescription:
         "Built a responsive portfolio website using ReactJS and Bootstrap, featuring Smooth Scroll for enhanced navigation and EmailJS for user email submissions.",
       lastDateModified: "Nov 26, 2025",
+      githubLink: null,
+      liveLink: null,
+      alertMessage:
+        "Currently, this site does not have an external live link or a GitHub link.",
     },
   ];
 
@@ -136,8 +161,16 @@ export const WebViewModal = (): WebProject => {
       console.log("project not found");
     }
   };
+
+  const validNavigate = (projectId: number) => {
+    // if (show === true) {
+    selectedProject(projectId);
+    // }
+  };
   return {
     web,
     selectedProject,
+    validNavigate,
   };
 };
+// "Here is a laptop image resolution displayed. Please check the live link for a better experience.",

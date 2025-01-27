@@ -45,7 +45,7 @@ const About: React.FC = () => {
             <Col className="order-0 order-md-1 col-12 col-md-5 col-lg-4  pe-lg-4 py-lg-5 d-flex justify-content-center ">
               <Image
                 src={icon.Profile}
-                alt=""
+                alt={icon.Profile}
                 className="profileImg"
                 style={{
                   // width: "100%",
