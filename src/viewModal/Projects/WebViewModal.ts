@@ -19,7 +19,7 @@ interface WebProject {
 import { useNavigate } from "react-router-dom";
 // image
 import { ProjectImage } from "../../assets/Images/ProjectImage";
-import { AlertViewModal } from "../AlertViewModal";
+// import { AlertViewModal } from "../AlertViewModal";
 
 export const WebViewModal = (): WebProject => {
   const navigation = useNavigate();
