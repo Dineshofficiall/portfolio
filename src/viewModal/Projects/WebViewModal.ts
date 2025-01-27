@@ -23,7 +23,7 @@ import { AlertViewModal } from "../AlertViewModal";
 
 export const WebViewModal = (): WebProject => {
   const navigation = useNavigate();
-  const { show } = AlertViewModal();
+  // const { show } = AlertViewModal();
   const img = ProjectImage();
   const web: Web[] = [
     {
