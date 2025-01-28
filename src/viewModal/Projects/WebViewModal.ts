@@ -13,7 +13,6 @@ interface Web {
 interface WebProject {
   web: Web[];
   selectedProject: (filterId: number) => void;
-  validNavigate: (projectId: number) => void;
 }
 
 import { useNavigate } from "react-router-dom";
@@ -162,15 +161,9 @@ export const WebViewModal = (): WebProject => {
     }
   };
 
-  const validNavigate = (projectId: number) => {
-    // if (show === true) {
-    selectedProject(projectId);
-    // }
-  };
   return {
     web,
     selectedProject,
-    validNavigate,
   };
 };
 // "Here is a laptop image resolution displayed. Please check the live link for a better experience.",

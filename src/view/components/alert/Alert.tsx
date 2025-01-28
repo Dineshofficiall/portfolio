@@ -2,9 +2,11 @@ import React from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import "./Alert.css";
+import { WebViewModal } from "../../../viewModal/Projects/WebViewModal";
 
 interface AlertProp {
   show: boolean;
+  projectId: number;
   modalTile: string;
   modalBody: string | null;
   handleAlertClose: () => void;
@@ -13,10 +15,12 @@ interface AlertProp {
 
 const Alert: React.FC<AlertProp> = ({
   show,
+  projectId,
   modalTile,
   modalBody,
   handleAlertClose,
 }) => {
+  const {selectedProject} = WebViewModal();
   return (
     <>
       <Modal
@@ -35,7 +39,9 @@ const Alert: React.FC<AlertProp> = ({
           <Button variant="outline-warning" onClick={handleAlertClose}>
             Cancel
           </Button>
-          <Button variant="danger">Ok</Button>
+          <Button variant="danger" onClick={() => selectedProject(projectId)}>
+            Ok
+          </Button>
         </Modal.Footer>
       </Modal>
     </>

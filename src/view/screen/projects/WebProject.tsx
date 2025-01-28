@@ -1,18 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import { Card, Col, Row } from "react-bootstrap";
 import { WebViewModal } from "../../../viewModal/Projects/WebViewModal";
 import Alert from "../../components/alert/Alert";
 import { AlertViewModal } from "../../../viewModal/AlertViewModal";
 
 const WebProject: React.FC = () => {
-  const { web, validNavigate } = WebViewModal();
+  const { web } = WebViewModal();
   const { show, handleAlertShow, handleAlertClose } = AlertViewModal();
+  const [alertMessage, setAlertMessage] = useState({
+    projectId: 0,
+    alertMessage: "",
+    alertTitle: "",
+  });
   return (
     <aside>
       <Row xs={1} sm={2} lg={3} className="g-4 g-sm-5 g-md-4 g-lg-3 my-4">
         {web.map((item, index) => (
           <>
-            <Col key={index} onClick={() => validNavigate(item.projectId)}>
+            <Col
+              key={index}
+              onClick={() => {
+                handleAlertShow();
+                setAlertMessage({
+                  projectId: item.projectId,
+                  alertMessage: item.projectDescription,
+                  alertTitle: item.projectHeading,
+                });
+              }}
+            >
               <Card className="p-2 rounded-4 project-card">
                 <Card.Img
                   variant="top"
@@ -42,16 +57,19 @@ const WebProject: React.FC = () => {
                 </Card.Footer>
               </Card>
             </Col>
-            <Alert
-              show={show}
-              modalTile={item.projectHeading}
-              modalBody={item.alertMessage}
-              handleAlertClose={handleAlertClose}
-              handleAlertShow={handleAlertShow} // Pass the show/hide functions here
-            />
           </>
         ))}
       </Row>
+      {alertMessage.alertTitle && (
+        <Alert
+          show={show}
+          projectId={alertMessage.projectId}
+          modalTile={alertMessage.alertTitle}
+          modalBody={alertMessage.alertMessage}
+          handleAlertClose={handleAlertClose}
+          handleAlertShow={handleAlertShow}
+        />
+      )}
     </aside>
   );
 };
