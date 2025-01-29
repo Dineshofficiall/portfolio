@@ -16,7 +16,7 @@ const PortfolioNavbar: React.FC = () => {
 
   const githubRedirection = () => {
     setGithubStates("Redirecting . . . .");
-    window.location.href = "https://github.com/Dineshofficiall";
+    window.open("https://github.com/Dineshofficiall", "_blank");
   };
   return (
     <>

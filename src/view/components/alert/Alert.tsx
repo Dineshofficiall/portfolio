@@ -2,7 +2,7 @@ import React from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import "./Alert.css";
-import { WebViewModal } from "../../../viewModal/Projects/WebViewModal";
+// import { WebViewModal } from "../../../viewModal/Projects/WebViewModal";
 
 interface AlertProp {
   show: boolean;
@@ -10,7 +10,7 @@ interface AlertProp {
   modalTile: string;
   modalBody: string | null;
   handleAlertClose: () => void;
-  handleAlertShow: () => void;
+  togglePage: (number: number) => void;
 }
 
 const Alert: React.FC<AlertProp> = ({
@@ -19,8 +19,9 @@ const Alert: React.FC<AlertProp> = ({
   modalTile,
   modalBody,
   handleAlertClose,
+  togglePage,
 }) => {
-  const {selectedProject} = WebViewModal();
+  // const {selectedProject} = WebViewModal();
   return (
     <>
       <Modal
@@ -39,7 +40,7 @@ const Alert: React.FC<AlertProp> = ({
           <Button variant="outline-warning" onClick={handleAlertClose}>
             Cancel
           </Button>
-          <Button variant="danger" onClick={() => selectedProject(projectId)}>
+          <Button variant="danger" onClick={() => togglePage(projectId)}>
             Ok
           </Button>
         </Modal.Footer>

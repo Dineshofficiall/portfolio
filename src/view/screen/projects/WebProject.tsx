@@ -5,7 +5,7 @@ import Alert from "../../components/alert/Alert";
 import { AlertViewModal } from "../../../viewModal/AlertViewModal";
 
 const WebProject: React.FC = () => {
-  const { web } = WebViewModal();
+  const { web, selectedProject } = WebViewModal();
   const { show, handleAlertShow, handleAlertClose } = AlertViewModal();
   const [alertMessage, setAlertMessage] = useState({
     projectId: 0,
@@ -15,17 +15,21 @@ const WebProject: React.FC = () => {
   return (
     <aside>
       <Row xs={1} sm={2} lg={3} className="g-4 g-sm-5 g-md-4 g-lg-3 my-4">
-        {web.map((item, index) => (
+        {web.map((item) => (
           <>
             <Col
-              key={index}
+              key={item.projectId}
               onClick={() => {
-                handleAlertShow();
-                setAlertMessage({
-                  projectId: item.projectId,
-                  alertMessage: item.projectDescription,
-                  alertTitle: item.projectHeading,
-                });
+                if (item.projectId === 4) {
+                  selectedProject(item.projectId);
+                } else {
+                  setAlertMessage({
+                    projectId: item.projectId,
+                    alertMessage: item.alertMessage ?? "",
+                    alertTitle: item.projectHeading,
+                  });
+                  handleAlertShow();
+                }
               }}
             >
               <Card className="p-2 rounded-4 project-card">
@@ -60,14 +64,14 @@ const WebProject: React.FC = () => {
           </>
         ))}
       </Row>
-      {alertMessage.alertTitle && (
+      {alertMessage.alertTitle && alertMessage.alertMessage && (
         <Alert
           show={show}
           projectId={alertMessage.projectId}
           modalTile={alertMessage.alertTitle}
           modalBody={alertMessage.alertMessage}
           handleAlertClose={handleAlertClose}
-          handleAlertShow={handleAlertShow}
+          togglePage={selectedProject}
         />
       )}
     </aside>

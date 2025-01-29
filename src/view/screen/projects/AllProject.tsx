@@ -1,18 +1,42 @@
 // eslint-disable-next-line no-unused-vars
-import React from "react";
+import React, { useState } from "react";
 import { Card, Col, Row } from "react-bootstrap";
 import { AllProjectViewModal } from "../../../viewModal/Projects/AllProjectViewModal";
+import { AlertViewModal } from "../../../viewModal/AlertViewModal";
+import Alert from "../../components/alert/Alert";
 
 const AllProject: React.FC = () => {
-  const { project } = AllProjectViewModal();
+  const { project, selectedProject } = AllProjectViewModal();
+  const { show, handleAlertShow, handleAlertClose } = AlertViewModal();
+  const [alertMessage, setAlertMessage] = useState({
+    projectId: 0,
+    alertMessage: "",
+    alertTitle: "",
+  });
   return (
     <Row xs={1} sm={2} lg={3} className="g-4 g-sm-5 g-md-4 g-lg-3 my-4">
-      {project.map((item, index) => (
-        <Col key={index}>
+      {project.map((item) => (
+        <Col
+          key={item.projectId}
+          onClick={() => {
+            if (item.projectId === 4) {
+              selectedProject(item.projectId);
+            } else {
+              setAlertMessage({
+                projectId: item.projectId,
+                alertMessage: item.alertMessage ?? "",
+                alertTitle: item.projectHeading,
+              });
+              handleAlertShow();
+            }
+          }}
+        >
           <Card className="p-2 rounded-4 project-card">
             <Card.Img
               variant="top"
-              className="rounded-4 p-2 object-fit-cover project-card"
+              className={`rounded-4 p-2 object-fit-${
+                item.projectId >= 1000 ? "contain" : "cover"
+              } project-card`}
               height={180}
               src={item.images[0]}
             />
@@ -39,6 +63,16 @@ const AllProject: React.FC = () => {
           </Card>
         </Col>
       ))}
+      {alertMessage.alertTitle && alertMessage.alertMessage && (
+        <Alert
+          show={show}
+          projectId={alertMessage.projectId}
+          modalTile={alertMessage.alertTitle}
+          modalBody={alertMessage.alertMessage}
+          handleAlertClose={handleAlertClose}
+          togglePage={selectedProject}
+        />
+      )}
     </Row>
   );
 };

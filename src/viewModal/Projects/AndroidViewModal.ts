@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { ProjectImage } from "../../assets/Images/ProjectImage";
 interface Android {
   projectId: number;
@@ -13,9 +14,12 @@ interface Android {
 }
 interface AndroidProject {
   android: Android[];
+  selectedProject: (number: number) => void;
 }
 export const AndroidViewModal = (): AndroidProject => {
+  const navigation = useNavigate();
   const img = ProjectImage();
+
   const android: Android[] = [
     {
       projectId: 1000,
@@ -43,7 +47,24 @@ export const AndroidViewModal = (): AndroidProject => {
         "This is an Android project, and we will soon integrate it into the tech stack for virtual display through an online view.",
     },
   ];
+
+  const selectedProject = (filterId: number) => {
+    const filteredProject = android.find(
+      (object) => object.projectId === filterId
+    );
+    if (filteredProject) {
+      console.log("filteredObject -> ", filteredProject);
+
+      navigation(`/project/details/${filterId}`, {
+        state: { project: filteredProject },
+      });
+    } else {
+      console.log("project not found");
+    }
+  };
+
   return {
     android,
+    selectedProject,
   };
 };

@@ -9,8 +9,8 @@ const About: React.FC = () => {
   const [resumeStates, setResumeStatus] = useState<string>("Check Resume");
   const resumeRedirection = () => {
     setResumeStatus("Redirecting . . . .");
-    window.location.href =
-      "https://drive.google.com/file/d/1Yo5ZFiG52qGB7fjv8nVxj4WE21wkt0xY/view?usp=sharing";
+    window.open(
+      "https://drive.google.com/file/d/1Yo5ZFiG52qGB7fjv8nVxj4WE21wkt0xY/view?usp=sharing", "_blank")
   };
   return (
     <>
