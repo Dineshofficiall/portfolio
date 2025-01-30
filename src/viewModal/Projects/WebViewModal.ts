@@ -1,7 +1,7 @@
 interface Web {
   projectId: number;
   images: string[];
-  techStack: string[];
+  techStack: { icon: string; stack: string }[];
   projectHeading: string;
   projectTimeLine: string;
   projectDescription: string;
@@ -18,11 +18,13 @@ interface WebProject {
 import { useNavigate } from "react-router-dom";
 // image
 import { ProjectImage } from "../../assets/Images/ProjectImage";
+import { SkillsIcon } from "../../assets/Images/SkillsIcon";
 // import { AlertViewModal } from "../AlertViewModal";
 
 export const WebViewModal = (): WebProject => {
   const navigation = useNavigate();
   // const { show } = AlertViewModal();
+  const icon = SkillsIcon();
   const img = ProjectImage();
   const web: Web[] = [
     {
@@ -36,7 +38,11 @@ export const WebViewModal = (): WebProject => {
         img.JIFFYJSONpic6,
         img.JIFFYJSONpic7,
       ],
-      techStack: ["Material UI", "React Js", "Redux"],
+      techStack: [
+        { icon: icon.materialUi, stack: "Material UI" },
+        { icon: icon.reactIcon, stack: "React Js" },
+        { icon: icon.reduxIcon, stack: "Redux" },
+      ],
       projectHeading: "JIFFYJSON",
       projectTimeLine: "Jan 4, 2025 - Jan 23, 2025",
       projectDescription:
@@ -58,12 +64,26 @@ export const WebViewModal = (): WebProject => {
         img.basicsPic6,
       ],
       techStack: [
-        "Bootstrap",
-        "React Js",
-        "Context",
-        "Java",
-        "Spring Boot",
-        "Sql",
+        {
+          icon: icon.bootStrapIcon,
+          stack: "Bootstrap",
+        },
+        {
+          icon: icon.reactIcon,
+          stack: "React Js",
+        },
+        {
+          icon: icon.javaIcon,
+          stack: "Java",
+        },
+        {
+          icon: icon.springBootIcon,
+          stack: "Spring Boot",
+        },
+        {
+          icon: icon.postgreSqlIcon,
+          stack: "Sql",
+        },
       ],
       projectHeading: "Basics",
       projectTimeLine: "April 07, 2024 - May 27, 2024",
@@ -90,7 +110,24 @@ export const WebViewModal = (): WebProject => {
         img.theChocolateRoomPic10,
         img.theChocolateRoomPic11,
       ],
-      techStack: ["Java Script", "Bootstrap", "Html", "Css"],
+      techStack: [
+        {
+          icon: icon.jsIcon,
+          stack: "Java Script",
+        },
+        {
+          icon: icon.bootStrapIcon,
+          stack: "Bootstrap",
+        },
+        {
+          icon: icon.htmlIcon,
+          stack: "Html",
+        },
+        {
+          icon: icon.cssIcon,
+          stack: "Css",
+        },
+      ],
       projectHeading: "The Chocolate Room",
       projectTimeLine: "Dec 2, 2024 - Dec 20, 2024",
       projectDescription:
@@ -111,7 +148,20 @@ export const WebViewModal = (): WebProject => {
         img.portfoliopic5,
         img.portfoliopic6,
       ],
-      techStack: ["Bootstrap", "React Js", "EmailJs"],
+      techStack: [
+        {
+          icon: icon.bootStrapIcon,
+          stack: "Bootstrap",
+        },
+        {
+          icon: icon.reactIcon,
+          stack: "React Js",
+        },
+        {
+          icon: icon.EmailJs,
+          stack: "EmailJs",
+        },
+      ],
       projectHeading: "Portfolio",
       projectTimeLine: "Jun 20, 2024 - Aug 25, 2024",
       projectDescription:
@@ -135,7 +185,20 @@ export const WebViewModal = (): WebProject => {
         img.oldChocolate9,
         img.oldChocolate10,
       ],
-      techStack: ["Java Script", "Html", "Css"],
+      techStack: [
+        {
+          icon: icon.jsIcon,
+          stack: "Java Script",
+        },
+        {
+          icon: icon.htmlIcon,
+          stack: "Html",
+        },
+        {
+          icon: icon.cssIcon,
+          stack: "Css",
+        },
+      ],
       projectHeading: "The Chocolate Room",
       projectTimeLine: "Oct 30, 2024 - Nov 7, 2024",
       projectDescription:

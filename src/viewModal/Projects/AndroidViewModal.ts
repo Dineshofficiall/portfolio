@@ -1,9 +1,10 @@
 import { useNavigate } from "react-router-dom";
 import { ProjectImage } from "../../assets/Images/ProjectImage";
+import { SkillsIcon } from "../../assets/Images/SkillsIcon";
 interface Android {
   projectId: number;
   images: string[];
-  techStack: string[];
+  techStack: { icon: string; stack: string }[];
   projectHeading: string;
   projectTimeLine: string;
   projectDescription: string;
@@ -17,6 +18,7 @@ interface AndroidProject {
   selectedProject: (number: number) => void;
 }
 export const AndroidViewModal = (): AndroidProject => {
+  const icon = SkillsIcon();
   const navigation = useNavigate();
   const img = ProjectImage();
 
@@ -35,7 +37,16 @@ export const AndroidViewModal = (): AndroidProject => {
         img.androidEventpic9,
         img.androidEventpic10,
       ],
-      techStack: ["React Native", "Fire Base"],
+      techStack: [
+        {
+          icon: icon.reactIcon,
+          stack: "React Native",
+        },
+        {
+          icon: icon.fireBase,
+          stack: "Fire Base",
+        },
+      ],
       projectHeading: "Event Management",
       projectTimeLine: "Sep 12, 2024 - Sep 25, 2024",
       projectDescription:

@@ -38,9 +38,9 @@ const AndroidProject: React.FC = () => {
               src={item.images[0]}
             />
             <Card.Header className="header-content">
-              {item.techStack.map((techStack, techStackIndex) => (
+              {/* {item.techStack.map((techStack, techStackIndex) => (
                 <li key={techStackIndex}>{techStack}</li>
-              ))}
+              ))} */}
             </Card.Header>
             <Card.Body className="project-card pt-2 pb-2 px-2">
               <Card.Title className="project-card my-0">

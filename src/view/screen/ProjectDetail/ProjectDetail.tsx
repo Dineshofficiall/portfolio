@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Carousel from "react-bootstrap/Carousel";
 import Image from "react-bootstrap/Image";
@@ -6,6 +6,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import "./ProjectDetails.css";
 import { LinkToWebModal } from "../../../viewModal/LinkToWebModal";
 import { ButtonComponent } from "../../components/Button/ButtonComponent";
+import { Slide, toast, ToastContainer } from "react-toastify";
 
 const ProjectDetail: React.FC = () => {
   const location = useLocation();
@@ -14,10 +15,26 @@ const ProjectDetail: React.FC = () => {
   console.log("project Details -> ", selectedProject);
   const { resumeRedirection } = LinkToWebModal();
 
+  const notify = () =>
+    toast.success("⚠️ 📷 Laptop only. 🔗 Visit site.", {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+      transition: Slide,
+    });
+  useEffect(() => {
+    if (selectedProject.projectId < 1000) {
+      notify();
+    }
+  }, [selectedProject.projectId]);
+
   return (
-    <Container
-      className="pt-3 d-flex justify-content-center customHeight"
-    >
+    <Container className="pt-3 d-flex justify-content-center customHeight">
       <Row>
         <Col xs={12} lg={6} className="mb-3 mb-lg-0 ">
           <Carousel>
@@ -26,9 +43,8 @@ const ProjectDetail: React.FC = () => {
                 <Image
                   src={item}
                   width={"100%"}
-                  // height={selectedProject.productId >= 1000 ? 500 : "auto"}
-                  height={ selectedProject.projectId >= 1000 ? 500 : "auto"}
-                  style={{ objectFit: "contain" }} // Prevents unwanted resizing
+                  height={selectedProject.projectId >= 1000 ? 500 : "auto"}
+                  style={{ objectFit: "contain" }}
                 />
               </Carousel.Item>
             ))}
@@ -45,13 +61,16 @@ const ProjectDetail: React.FC = () => {
           </section>
           <main className="my-4">
             <h5>Tech Stack</h5>
-            <ul className="header-content">
+            <strong className="header-content1">
               {selectedProject.techStack.map(
-                (item: string, index: React.Key) => (
-                  <li key={index}>{item}</li>
+                (item: { icon: string; stack: string }, index: React.Key) => (
+                  <ul className="stackContainer">
+                    <Image src={item.icon} height={15} alt={item.icon} />
+                    <li key={index}>{item.stack}</li>
+                  </ul>
                 )
               )}
-            </ul>
+            </strong>
           </main>
           <aside>
             {selectedProject.githubLink !== null ||
@@ -75,8 +94,25 @@ const ProjectDetail: React.FC = () => {
               />
             )}
           </aside>
+          <section className="my-4">
+            <h5>Latest update</h5>
+            <small className="px-3">{selectedProject.lastDateModified}</small>
+          </section>
         </Col>
       </Row>
+      <ToastContainer
+        position="top-right"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+        transition={Slide}
+      />
     </Container>
   );
 };

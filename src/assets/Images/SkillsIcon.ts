@@ -15,7 +15,8 @@ import nodeJsIcon from "../icons/Skills icons/nodejs.svg";
 import intellijIcon from "../icons/Skills icons/intelli.svg";
 import fireBase from "../icons/Skills icons/firebase.svg";
 import sqlite from "../icons/Skills icons/sqlite.svg";
-import materialUi from '../icons/Skills icons/materiaUi.png'
+import materialUi from "../icons/Skills icons/materiaUi.png";
+import EmailJs from "../icons/Skills icons/emailjs.svg";
 
 export const SkillsIcon = () => {
   return {
@@ -36,6 +37,7 @@ export const SkillsIcon = () => {
     intellijIcon,
     fireBase,
     sqlite,
-    materialUi
+    materialUi,
+    EmailJs,
   };
 };
