@@ -1,7 +1,7 @@
 interface Project {
   projectId: number;
   images: string[];
-  techStack: string[];
+  techStack: { icon: string; stack: string }[];
   projectHeading: string;
   projectTimeLine: string;
   projectDescription: string;
