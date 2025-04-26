@@ -10,7 +10,10 @@ const About: React.FC = () => {
   const resumeRedirection = () => {
     setResumeStatus("Redirecting . . . .");
     window.open(
-      "https://drive.google.com/file/d/1Yo5ZFiG52qGB7fjv8nVxj4WE21wkt0xY/view?usp=sharing", "_blank")
+      "https://drive.google.com/file/d/1CV0fOiOU1WrtlZP-rUjFhBcb4s9gU0Wf/view?usp=sharing",
+      "_blank"
+    );
+    setResumeStatus("Check Resume");
   };
   return (
     <>
@@ -22,11 +25,13 @@ const About: React.FC = () => {
                 <h1 className="fs-2 fs-sm-6">Hi, I am</h1>
                 <h1 className="fs-2 fs-sm-2">Dinesh Kumar</h1>
               </div>
-              <h1 className="domain fs-3 fs-sm-2">I am a fullstack developer</h1>
+              <h1 className="domain fs-3 fs-sm-2">
+                I am a fullstack developer
+              </h1>
               <div className="py-3 py-md-0 my-lg-2">
                 <p className="header-passage">
                   I am an enthusiastic developer with a BSc in Computer Science,
-                  bringing six months of experience in both React Js and React
+                  bringing eight months of experience in both React Js and React
                   Native frontend development. I specialize in creating
                   responsive mobile and web applications. Passionate about
                   continuous learning, I am eager to contribute to innovative

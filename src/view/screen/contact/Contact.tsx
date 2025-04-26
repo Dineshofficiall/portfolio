@@ -72,9 +72,9 @@ const Contact: React.FC = () => {
 
     setSubjectStatus(subject.length >= 3 ? true : false);
 
-    setMessageStatus(message.length >= 5 ? true : false);
+    setMessageStatus(message.length >= 1 ? true : false);
 
-    return emailValidate && subject.length >= 3 && message.length >= 5;
+    return emailValidate && subject.length >= 1 && message.length >= 1;
   };
 
   const sendMail = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -115,6 +115,8 @@ const Contact: React.FC = () => {
           theme: "dark",
           transition: Slide,
         });
+
+        setFormStatus(true);
       }
     } else {
       alert("Form validation failed. Please check the inputs.");
